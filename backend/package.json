@@ -8,7 +8,7 @@
   "exports": "./dist/index.mjs",
   "scripts": {
     "dev": "tsx watch src/index.ts",
-    "start": "node src/index.ts",
+    "start": "node dist/index.mjs",
     "build": "pkgroll"
   },
   "author": "Diego Zambrano",
