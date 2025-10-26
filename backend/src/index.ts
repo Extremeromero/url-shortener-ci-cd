@@ -1,7 +1,7 @@
 import express, { json } from 'express';
 import router from './routes/index';
 import cors from 'cors';
-import { PORT } from './config';
+// import { PORT } from './config';
 import notFoundHandler from './middlewares/notFoundHandler.middleware';
 import errorHandler from './middlewares/errorHandler.middleware';
 
