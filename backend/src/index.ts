@@ -29,6 +29,8 @@ app.use(router);
 router.use(errorHandler);
 router.use(notFoundHandler);
 
-app.listen(PORT, () => {
-  console.log(`Example app listening on port ${PORT}`);
-});
+export default app;
+
+// app.listen(PORT, () => {
+//   console.log(`Example app listening on port ${PORT}`);
+// });
