@@ -1,0 +1,38 @@
+name: CI URL Shortener
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout del repositorio
+        uses: actions/checkout@v4
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      # ===== BACKEND =====
+      - name: Instalar dependencias Backend
+        working-directory: backend
+        run: npm install
+
+      - name: Ejecutar tests Backend (si existen)
+        working-directory: backend
+        run: npm test --if-present
+
+      # ===== FRONTEND =====
+      - name: Instalar dependencias Frontend
+        working-directory: frontend
+        run: npm install
+
+      - name: Build Frontend
+        working-directory: frontend
+        run: npm run build
